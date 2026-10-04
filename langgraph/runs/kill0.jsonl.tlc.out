@@ -1,0 +1,113 @@
+TLC2 Version 2026.10.02.163556 (rev: 1813307)
+Running breadth-first search Model-Checking with fp 26 and seed -1573579091442965823 with 1 worker on 10 cores with 5939MB heap and 64MB offheap memory [pid: 96465] (Mac OS X 26.6.2 x86_64, Eclipse Adoptium 25.0.4.1 64bit, MSBDiskFPSet, DiskStateQueue).
+Parsing file spec/harnessTrace.tla
+Parsing file spec/harness.tla
+Parsing file <tmp>/Json.tla (jar:file:tools/tla2tools.jar!/tla2sany/StandardModules/Json.tla)
+Parsing file <tmp>/IOUtils.tla (jar:file:tools/CommunityModules-deps.jar!/IOUtils.tla)
+Parsing file <tmp>/Sequences.tla (jar:file:tools/tla2tools.jar!/tla2sany/StandardModules/Sequences.tla)
+Parsing file <tmp>/TLC.tla (jar:file:tools/tla2tools.jar!/tla2sany/StandardModules/TLC.tla)
+Parsing file <tmp>/_TLCTrace.tla (jar:file:tools/tla2tools.jar!/tla2sany/StandardModules/_TLCTrace.tla)
+Parsing file <tmp>/Naturals.tla (jar:file:tools/tla2tools.jar!/tla2sany/StandardModules/Naturals.tla)
+Parsing file <tmp>/FiniteSets.tla (jar:file:tools/tla2tools.jar!/tla2sany/StandardModules/FiniteSets.tla)
+Parsing file <tmp>/Integers.tla (jar:file:tools/tla2tools.jar!/tla2sany/StandardModules/Integers.tla)
+Parsing file <tmp>/SequencesExt.tla (jar:file:tools/CommunityModules-deps.jar!/SequencesExt.tla)
+Parsing file <tmp>/FiniteSetsExt.tla (jar:file:tools/CommunityModules-deps.jar!/FiniteSetsExt.tla)
+Parsing file <tmp>/Folds.tla (jar:file:tools/CommunityModules-deps.jar!/Folds.tla)
+Parsing file <tmp>/Functions.tla (jar:file:tools/CommunityModules-deps.jar!/Functions.tla)
+Parsing file <tmp>/Bags.tla (jar:file:tools/tla2tools.jar!/tla2sany/StandardModules/Bags.tla)
+Parsing file <tmp>/TLCExt.tla (jar:file:tools/tla2tools.jar!/tla2sany/StandardModules/TLCExt.tla)
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module harness
+Semantic processing of module TLC
+Semantic processing of module Json
+Semantic processing of module Integers
+Semantic processing of module Folds
+Semantic processing of module Functions
+Semantic processing of module FiniteSetsExt
+Semantic processing of module Bags
+Semantic processing of module SequencesExt
+Semantic processing of module IOUtils
+Semantic processing of module TLCExt
+Semantic processing of module _TLCTrace
+Semantic processing of module harnessTrace
+Linting of module harness
+Linting of module Json
+Linting of module Folds
+Linting of module Functions
+Linting of module FiniteSetsExt
+Linting of module SequencesExt
+Linting of module IOUtils
+Linting of module TLCExt
+Linting of module _TLCTrace
+Linting of module harnessTrace
+Starting... (2026-10-04 14:37:49)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-10-04 14:37:49.
+Error: Invariant AtMostOnce is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ aborted = [email_7 |-> FALSE]
+/\ l = 1
+/\ redelivered = [email_7 |-> FALSE]
+/\ inflight = [email_7 |-> FALSE]
+/\ gate = [email_7 |-> "granted"]
+/\ acked = [email_7 |-> FALSE]
+/\ calls = 0
+/\ seenKeys = {}
+/\ attempt = [email_7 |-> 0]
+/\ effects = [email_7 |-> 0]
+
+State 2: <IsCall line 45, col 18 to line 45, col 94 of module harnessTrace>
+/\ aborted = [email_7 |-> FALSE]
+/\ l = 2
+/\ redelivered = [email_7 |-> FALSE]
+/\ inflight = [email_7 |-> TRUE]
+/\ gate = [email_7 |-> "granted"]
+/\ acked = [email_7 |-> FALSE]
+/\ calls = 1
+/\ seenKeys = {}
+/\ attempt = [email_7 |-> 1]
+/\ effects = [email_7 |-> 0]
+
+State 3: <IsLostAck line 47, col 18 to line 47, col 94 of module harnessTrace>
+/\ aborted = [email_7 |-> FALSE]
+/\ l = 3
+/\ redelivered = [email_7 |-> FALSE]
+/\ inflight = [email_7 |-> FALSE]
+/\ gate = [email_7 |-> "granted"]
+/\ acked = [email_7 |-> FALSE]
+/\ calls = 1
+/\ seenKeys = {<<"email_7", 1>>}
+/\ attempt = [email_7 |-> 1]
+/\ effects = [email_7 |-> 1]
+
+State 4: <IsCall line 45, col 18 to line 45, col 94 of module harnessTrace>
+/\ aborted = [email_7 |-> FALSE]
+/\ l = 4
+/\ redelivered = [email_7 |-> FALSE]
+/\ inflight = [email_7 |-> TRUE]
+/\ gate = [email_7 |-> "granted"]
+/\ acked = [email_7 |-> FALSE]
+/\ calls = 2
+/\ seenKeys = {<<"email_7", 1>>}
+/\ attempt = [email_7 |-> 2]
+/\ effects = [email_7 |-> 1]
+
+State 5: <IsAck line 46, col 18 to line 46, col 94 of module harnessTrace>
+/\ aborted = [email_7 |-> FALSE]
+/\ l = 5
+/\ redelivered = [email_7 |-> FALSE]
+/\ inflight = [email_7 |-> FALSE]
+/\ gate = [email_7 |-> "granted"]
+/\ acked = [email_7 |-> TRUE]
+/\ calls = 2
+/\ seenKeys = {<<"email_7", 1>>, <<"email_7", 2>>}
+/\ attempt = [email_7 |-> 2]
+/\ effects = [email_7 |-> 2]
+
+7 states generated, 5 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 5.
+Finished in 01s at (2026-10-04 14:37:49)
+Trace exploration spec path: spec/harnessTrace_TTrace_1791113868.tla

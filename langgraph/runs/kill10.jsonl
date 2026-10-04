@@ -1,0 +1,3 @@
+{"kind": "run", "run_id": "kill10", "steps": ["email_7"], "destructive": [], "max_retries": 1, "budget": 2, "key_mode": "none", "on_approval_timeout": "abort", "budget_scope": "run"}
+{"event": "Call", "step": "email_7", "attempt": 1}
+{"event": "Ack", "step": "email_7", "attempt": 1, "effects": 1}
