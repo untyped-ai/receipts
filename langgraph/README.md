@@ -27,8 +27,11 @@ in 5 runs out of 5, on langgraph 1.2.11 (pinned here) and on 1.2.12. In a Linux
 container on the same machine (Python 3.12, Java 21) it duplicated the effect in 0 runs
 out of 10: there the write wins the race. That is the host dependence #8039 reports.
 
-The last two runs hold every pending write for 200 ms before it reaches SQLite. The
-effect is duplicated exactly when the process dies before the write lands. In
+The last two runs hold every pending write for 200 ms before it reaches SQLite. This
+is the technique of the `writes-delay` and `put-delay` modes of `probe_race.py` in the
+issue. What this folder adds is the run on 1.2.12, the macOS and Linux numbers, and a
+TLA+ verdict for each run. The effect is duplicated exactly when the process dies
+before the write lands. In
 `make repro` (the `kill50-write200` schedule) the process dies at least 150 ms before
 the write can land, and in `make control` (the `kill500-write200` schedule) about
 300 ms after it, so neither verdict depends on how fast the host is within those
